@@ -21,7 +21,7 @@ const aboutembed = {
   fields: [
     {
       name: "Invite me!",
-      value: "invite me using https://discord.com/oauth2/authorize?client_id=743109027831218176&scope=bot"
+      value: "invite me using https://discord.com/oauth2/authorize?client_id=743109027831218176&scope=bot&permissions=67488832"
     },
     {
       name: "complaints?",
@@ -30,6 +30,10 @@ const aboutembed = {
     {
       name: "The bot is open source!",
       value: "Contribute or make a issue at https://github.com/Scaledi/useless-toast-bot"
+    },
+    {
+      name: "Commands",
+      value: "Summon me in dms or any server I am on using `Toast`, `!!Toast`, or by pinging me. get this message again by typing `!!about`"
     }
   ]
 };
@@ -54,7 +58,7 @@ client.on('message', msg => {
       .then(() => msg.react('🇴'))
       .then(() => msg.react('🇦'))
       .then(() => msg.react('🇸'))
-      .then(() => msg.react('743541134692974704')); // might try and grab the discord t emoji and upload it directly to a server for dupe T's. but this is kinda funny tbh.
+      .then(() => msg.react('743541134692974704')); // might try and grab the discord emoji and upload it directly to a server for dupe T's. but this is kinda funny tbh.
     }
  });
  client.on('message', msg => {
