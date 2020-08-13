@@ -14,7 +14,7 @@ client.on('ready', () => {
  });
 
 client.on('message', msg => {
-  if(msg.content.toLowerCase() == 'toast' || msg.content == '<@!743109027831218176>') {
+  if(msg.content.toLowerCase() == 'toast' || msg.content.toLowerCase() == '!!toast' || msg.content == '<@!743109027831218176>') {
     fetch(`https://source.unsplash.com/1600x900/?toast`).then((response) => {
       msg.author.send(response.url);
       console.log("Toast Requested!");
@@ -24,9 +24,9 @@ client.on('message', msg => {
  });
 
  client.on('message', msg => {
- if (msg.content === 'About the toast...') {
- msg.reply('Ping For Toast. You Ping... I DM toast. I am possibly the most useless discord bot... but who the fuck ever wanted a useful discord bot? pssst. Amateurs. invite me using https://discord.com/oauth2/authorize?client_id=743109027831218176&scope=bot');
- }
+  if(msg.content.toLowerCase() === '!!about' || msg.content.toLowerCase() === 'about the toast' || msg.content.toLowerCase() === 'toast about') {
+    msg.reply('Ping For Toast. You Ping... I DM toast. I am possibly the most useless discord bot... but who the fuck ever wanted a useful discord bot? pssst. Amateurs. **invite me using https://discord.com/oauth2/authorize?client_id=743109027831218176&scope=bot**. **complaints? DM Ping for toast#7910**. or **make a issue at https://github.com/Scaledi/useless-toast-bot**. your call');
+    }
  });
 
  client.on('message', msg => {
