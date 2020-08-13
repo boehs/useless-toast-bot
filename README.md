@@ -27,7 +27,7 @@ Write `super secret stuff lol` and it will print into the cosole hosting the bot
 thats really it.
 
 # TODO
-* Add more about info
+✅ Add more about info
 * Add funny toast sounds
 * Change the reaction to a custom emoji
 * get a life
