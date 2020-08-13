@@ -33,39 +33,35 @@ const aboutembed = {
     }
   ]
 };
-
 const config = {
   token: process.env.TOKEN,
 }
-// Ready Message
 client.on('ready', () => {
  console.log(`Logged in as ${client.user.tag}!`);
  client.user.setActivity('you ask for toast', {type: "WATCHING"})
  });
-
 client.on('message', msg => {
   if(msg.content.toLowerCase() == 'toast' || msg.content.toLowerCase() == '!!toast' || msg.content == '<@!743109027831218176>') {
     fetch(`https://source.unsplash.com/1600x900/?toast`).then((response) => {
       msg.author.send(response.url).then(sentMessage => sentMessage.react('743504813492273183'))
-      .then(sentMessage => sentMessage.react('🇹')) //this is broken.... the text will not send... but... the bot still works without it... so I will leave it till I fix it ;)
-      .then(sentMessage => sentMessage.react('🇴'))
-      .then(sentMessage => sentMessage.react('🇦'))
-      .then(sentMessage => sentMessage.react('🇸'))
-      .then(sentMessage => sentMessage.react('🇹'));
       console.log("Toast Requested By " + msg.author.tag);
      });
     if(msg.content.toLowerCase() == '<@!743109027831218176>') {
       msg.react('743509805217611898');
     }
+    if(msg.content.toLowerCase() == "toast" || msg.content.toLowerCase() == "!!toast")
+    msg.react('🇹')
+      .then(() => msg.react('🇴'))
+      .then(() => msg.react('🇦'))
+      .then(() => msg.react('🇸'))
+      .then(() => msg.react('743541134692974704')); // might try and grab the discord t emoji and upload it directly to a server for dupe T's. but this is kinda funny tbh.
     }
  });
-
  client.on('message', msg => {
   if(msg.content.toLowerCase() === '!!about' || msg.content.toLowerCase() === 'about the toast' || msg.content.toLowerCase() === 'toast about') {
     msg.reply({ embed: aboutembed });
     }
  });
-
  client.on('message', msg => {
   if (msg.content === 'super secret stuff lol') {
     console.log(client.guilds.cache);
