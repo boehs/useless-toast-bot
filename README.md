@@ -25,3 +25,9 @@ Write `About the toast...` and the bot will give you a info blurb
 Write `super secret stuff lol` and it will print into the cosole hosting the bot info about the servers its in.
 
 thats really it.
+
+# TODO
+* Add more about info
+* Add funny toast sounds
+* Change the reaction to a custom emoji
+* get a life
