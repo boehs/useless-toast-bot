@@ -31,7 +31,8 @@ Write `Toast`, or `!!Toast` or ping the bot to get toast.
 
 thats really it.
 
-
+# Why do I get the same image for like 3 seconds if I spam?
+the bot is being rate limited by imgur. plz no spam.
 
 # TODO
 ✅ Add more about info
