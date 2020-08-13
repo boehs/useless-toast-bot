@@ -46,10 +46,17 @@ client.on('ready', () => {
 client.on('message', msg => {
   if(msg.content.toLowerCase() == 'toast' || msg.content.toLowerCase() == '!!toast' || msg.content == '<@!743109027831218176>') {
     fetch(`https://source.unsplash.com/1600x900/?toast`).then((response) => {
-      msg.author.send(response.url);
-      console.log("Toast Requested!");
+      msg.author.send(response.url).then(sentMessage => sentMessage.react('743504813492273183'))
+      .then(sentMessage => sentMessage.react('🇹')) //this is broken.... the text will not send... but... the bot still works without it... so I will leave it till I fix it ;)
+      .then(sentMessage => sentMessage.react('🇴'))
+      .then(sentMessage => sentMessage.react('🇦'))
+      .then(sentMessage => sentMessage.react('🇸'))
+      .then(sentMessage => sentMessage.react('🇹'));
+      console.log("Toast Requested By " + msg.author.tag);
      });
-    msg.react('🍞');
+    if(msg.content.toLowerCase() == '<@!743109027831218176>') {
+      msg.react('743509805217611898');
+    }
     }
  });
 
