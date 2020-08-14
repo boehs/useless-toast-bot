@@ -37,7 +37,8 @@ the bot is being rate limited by imgur. plz no spam.
 # TODO
 ✅ Add more about info
 * Add funny toast sounds
-* Change the reaction to a custom emoji
+  
+✅ Change the reaction to a custom emoji
 * get a life
 
 ✅ Change about to a embed
