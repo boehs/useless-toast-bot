@@ -2,7 +2,9 @@ const Discord = require('discord.js');
 const request = require('request');
 const fetch = require('node-fetch');
 require('dotenv-flow').config();
+
 const client = new Discord.Client();
+
 const aboutembed = {
   title: "About",
   description: "Ping For Toast. You **Ping**... I **DM** toast. I am possibly the most useless discord bot... but who the fuck ever wanted a useful discord bot? psssh. Amateurs. ",
@@ -37,13 +39,16 @@ const aboutembed = {
     }
   ]
 };
+
 const config = {
   token: process.env.TOKEN,
 }
+
 client.on('ready', () => {
  console.log(`Logged in as ${client.user.tag}!`);
  client.user.setActivity('you ask for toast', {type: "WATCHING"})
  });
+
 client.on('message', msg => {
   if(msg.content.toLowerCase() == 'toast' || msg.content.toLowerCase() == '!!toast' || msg.content == '<@!743109027831218176>') {
     fetch(`https://source.unsplash.com/1600x900/?toast`).then((response) => {
@@ -61,15 +66,26 @@ client.on('message', msg => {
       .then(() => msg.react('743541134692974704')); // might try and grab the discord emoji and upload it directly to a server for dupe T's. but this is kinda funny tbh.
     }
  });
- client.on('message', msg => {
+
+client.on('message', msg => {
   if(msg.content.toLowerCase() === '!!about' || msg.content.toLowerCase() === 'about the toast' || msg.content.toLowerCase() === 'toast about') {
     msg.reply({ embed: aboutembed });
     }
  });
- client.on('message', msg => {
+
+client.on('message', msg => {
   if (msg.content === 'super secret stuff lol') {
     console.log(client.guilds.cache);
     msg.reply('hi! if you are a importaint person... you can see a list of all the servers the bot is in by visiting the command prompt!');
+  }
+})
+
+client.on('message', msg => {
+  if (msg.content.toLowerCase() == '!!toast noise' || msg.content.toLowerCase() == 'toast noise') {
+    console.log("Toast Noise Requested by " + msg.author.tag + "... ew!");
+    msg.reply('https://raw.githubusercontent.com/Scaledi/useless-toast-bot/master/Files/Toastyyy.mp3' + ' You gross fuck')
+    .then(sentMessage => sentMessage.react('743504813492273183'))
+    .then(() => msg.react('743862090162241567'))
   }
 })
 
