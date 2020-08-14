@@ -18,7 +18,7 @@ A discord bot! Just set up a bot... and create the .env using your new token
 * dotenv-flow
 
 I also HIGHLY reccomend getting the package nodemon. this will automaticly restart the bot each time you save the code.
-For that... instead of `node *` Write `nodemon --inspect index.js`. then sit back and get coden
+For that... instead of `node .` Write `nodemon --inspect index.js`. then sit back and get coden
 # How to use the bot
 In a server your new bot is in... ping it... or write `Toast` (not case sensitive)
 The bot will dm you toast. you can dm the bot Toast and it will do the same thing
