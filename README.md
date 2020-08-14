@@ -29,6 +29,8 @@ Write `super secret stuff lol` and it will print into the cosole hosting the bot
 
 Write `Toast`, or `!!Toast` or ping the bot to get toast.
 
+Write `Toast Noise` or `!!toast noise` to be gross
+
 thats really it.
 
 # Why do I get the same image for like 3 seconds if I spam?
