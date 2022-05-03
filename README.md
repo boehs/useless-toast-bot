@@ -1,4 +1,4 @@
-# Wut is dis
+# Discord Toast Bot
 A useless toast bot! once you get it up and running... just ping it in dms... or, add it to a server and ping it then
 # Is there a already existing bot?
 Yes! `Ping For Toast#5001` or add him to any server using https://discord.com/oauth2/authorize?client_id=743109027831218176&scope=bot&permissions=67488832
@@ -42,7 +42,5 @@ the bot is being rate limited by imgur. plz no spam.
 ✅ Add funny toast sounds
 
 ✅ Change the reaction to a custom emoji
-
-❌ get a life
 
 ✅ Change about to a embed
