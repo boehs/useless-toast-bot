@@ -5,6 +5,8 @@ require('dotenv-flow').config();
 
 const client = new Discord.Client();
 
+var prefix = !!;
+
 const aboutembed = {
   title: "About",
   description: "Ping For Toast. You **Ping**... I **DM** toast. I am possibly the most useless discord bot... but who the fuck ever wanted a useful discord bot? psssh. Amateurs. ",
@@ -26,7 +28,7 @@ const aboutembed = {
       value: "invite me using https://discord.com/oauth2/authorize?client_id=743109027831218176&scope=bot&permissions=67488832"
     },
     {
-      name: "complaints?",
+      name: "Complaints?",
       value: "DM **Ping for toast#7910**... OR make a issue at the link below!"
     },
     {
@@ -50,7 +52,7 @@ client.on('ready', () => {
  });
 
 client.on('message', msg => {
-  if(msg.content.toLowerCase() == 'toast' || msg.content.toLowerCase() == '!!toast' || msg.content == '<@!743109027831218176>') {
+  if(msg.content.toLowerCase() == '${prefix}toast' || msg.content == '<@!743109027831218176>') {
     fetch(`https://source.unsplash.com/1600x900/?toast`).then((response) => {
       msg.author.send(response.url).then(sentMessage => sentMessage.react('743504813492273183'))
       console.log("Toast Requested By " + msg.author.tag);
@@ -58,7 +60,7 @@ client.on('message', msg => {
     if(msg.content.toLowerCase() == '<@!743109027831218176>') {
       msg.react('743509805217611898');
     }
-    if(msg.content.toLowerCase() == "toast" || msg.content.toLowerCase() == "!!toast")
+    if(msg.content.toLowerCase() == "${prefix}toast")
     msg.react('🇹')
       .then(() => msg.react('🇴'))
       .then(() => msg.react('🇦'))
@@ -68,20 +70,20 @@ client.on('message', msg => {
  });
 
 client.on('message', msg => {
-  if(msg.content.toLowerCase() === '!!about' || msg.content.toLowerCase() === 'about the toast' || msg.content.toLowerCase() === 'toast about') {
+  if(msg.content.toLowerCase() === '${prefix}about') {
     msg.reply({ embed: aboutembed });
     }
  });
 
 client.on('message', msg => {
-  if (msg.content === 'super secret stuff lol') {
+  if (msg.content === '${prefix}admincontrol') {
     console.log(client.guilds.cache);
     msg.reply('hi! if you are a importaint person... you can see a list of all the servers the bot is in by visiting the command prompt!');
   }
 })
 
 client.on('message', msg => {
-  if (msg.content.toLowerCase() == '!!toast noise' || msg.content.toLowerCase() == 'toast noise') {
+  if (msg.content.toLowerCase() == '${prefix} noise') {
     console.log("Toast Noise Requested by " + msg.author.tag + "... ew!");
     msg.reply('https://raw.githubusercontent.com/Scaledi/useless-toast-bot/master/Files/Toastyyy.mp3' + ' You gross fuck')
     .then(sentMessage => sentMessage.react('743504813492273183'))
